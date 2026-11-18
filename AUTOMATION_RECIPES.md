@@ -1,6 +1,6 @@
-# 🧪 Octopus AI Ecosystem: Automation Recipes & System Blueprints
+# 🧪 Soloman AI Ecosystem: Automation Recipes & System Blueprints
 
-This guide provides concrete, copy-paste-ready recipes and workflow configurations demonstrating how to interconnect **OctopusStudio**, **octocut**, **octolimb**, and **OctopusMCP-Manager** to build autonomous production systems.
+This guide provides concrete, copy-paste-ready recipes and workflow configurations demonstrating how to interconnect **Soloman Studio**, **Soloman Editor**, **Soloman Limb**, and **Soloman Manager** to build autonomous production systems.
 
 ---
 
@@ -18,24 +18,24 @@ This guide provides concrete, copy-paste-ready recipes and workflow configuratio
 **Objective:** Automatically monitor product releases or blog posts, draft high-engagement scripts, capture UI walk-throughs on desktop, edit vertical video reels with kinetic captions and voiceovers, and publish to social channels.
 
 ```
-[OctopusMCP-Manager: RSS / GitHub Release Feed]
+[Soloman Manager: RSS / GitHub Release Feed]
                      │
                      ▼
-[OctopusStudio: Scriptwriting & Scene Planner Agent]
+[Soloman Studio: Scriptwriting & Scene Planner Agent]
          │                               │
          ▼                               ▼
-[octolimb: Live UI Demo Capture]  [ElevenLabs/TTS Audio Gen]
+[soloman-limb: Live UI Demo Capture]  [ElevenLabs/TTS Audio Gen]
          │                               │
          └───────────────┬───────────────┘
                          ▼
-             [octocut: Video Compilation]
+             [soloman-editor: Video Compilation]
     - Crop to 9:16 vertical
     - Dynamic kinetic animated subtitles
     - Background music ducking
     - Zoom-in transitions on active clicks
                          │
                          ▼
-[OctopusMCP-Manager: YouTube / TikTok / X Publisher]
+[Soloman Manager: YouTube / TikTok / X Publisher]
 ```
 
 ### Automation Configuration
@@ -45,12 +45,12 @@ This guide provides concrete, copy-paste-ready recipes and workflow configuratio
   "trigger": { "mcpSource": "github", "event": "release.published" },
   "steps": [
     {
-      "tool": "OctopusStudio",
+      "tool": "Soloman Studio",
       "action": "generateScript",
       "params": { "tone": "energetic-tech", "durationSeconds": 45 }
     },
     {
-      "tool": "octolimb",
+      "tool": "soloman-limb",
       "action": "recordScenario",
       "params": {
         "url": "${trigger.payload.releaseUrl}",
@@ -58,7 +58,7 @@ This guide provides concrete, copy-paste-ready recipes and workflow configuratio
       }
     },
     {
-      "tool": "octocut",
+      "tool": "soloman-editor",
       "action": "renderVideo",
       "params": {
         "aspectRatio": "9:16",
@@ -67,7 +67,7 @@ This guide provides concrete, copy-paste-ready recipes and workflow configuratio
       }
     },
     {
-      "tool": "OctopusMCP-Manager",
+      "tool": "Soloman Manager",
       "action": "publishSocial",
       "params": { "platforms": ["youtube_shorts", "tiktok", "twitter_video"] }
     }
@@ -79,15 +79,15 @@ This guide provides concrete, copy-paste-ready recipes and workflow configuratio
 
 ## Recipe 2: Self-Healing Full-Stack DevOps & E2E Testing Cloud
 
-**Objective:** When an exception is logged in production, automatically capture the error trace, spin up a local staging environment, reproduce the bug using human-like browser automation (`octolimb`), fix the source code (`OctopusStudio`), re-verify, and open a documented PR with an attached proof-of-fix video (`octocut`).
+**Objective:** When an exception is logged in production, automatically capture the error trace, spin up a local staging environment, reproduce the bug using human-like browser automation (`Soloman Limb`), fix the source code (`Soloman Studio`), re-verify, and open a documented PR with an attached proof-of-fix video (`Soloman Editor`).
 
 ### Workflow Steps
-1. **Trigger:** `OctopusMCP-Manager` (Sentry MCP server) receives an unhandled JavaScript exception from user session.
-2. **Analysis:** `OctopusStudio` reads the error stack trace, pinpoints the faulty component in `src/components/`, and designs a reproduction script.
-3. **Reproduction:** `octolimb` boots a headless Chromium instance, follows the user's reproduction path, and confirms the crash while recording the screen.
-4. **Code Patch:** `OctopusStudio` applies a surgical fix via AST transforms.
-5. **Re-Test & Video Compilation:** `octolimb` reruns the test scenario. `octocut` stitches the **Before (Failing)** and **After (Fixed)** recordings into a side-by-side verification clip.
-6. **PR Creation:** `OctopusMCP-Manager` (GitHub MCP) submits the pull request, embeds the video artifact, and alerts the engineering Slack channel.
+1. **Trigger:** `Soloman Manager` (Sentry MCP server) receives an unhandled JavaScript exception from user session.
+2. **Analysis:** `Soloman Studio` reads the error stack trace, pinpoints the faulty component in `src/components/`, and designs a reproduction script.
+3. **Reproduction:** `Soloman Limb` boots a headless Chromium instance, follows the user's reproduction path, and confirms the crash while recording the screen.
+4. **Code Patch:** `Soloman Studio` applies a surgical fix via AST transforms.
+5. **Re-Test & Video Compilation:** `Soloman Limb` reruns the test scenario. `Soloman Editor` stitches the **Before (Failing)** and **After (Fixed)** recordings into a side-by-side verification clip.
+6. **PR Creation:** `Soloman Manager` (GitHub MCP) submits the pull request, embeds the video artifact, and alerts the engineering Slack channel.
 
 ---
 
@@ -97,10 +97,10 @@ This guide provides concrete, copy-paste-ready recipes and workflow configuratio
 
 ```python
 # RPA Orchestration Script utilizing the ecosystem
-from octopus_studio import StudioClient
-from octolimb import ComputerAgent
-from octopus_mcp import MCPManagerClient
-from octocut import VideoLogger
+from soloman_studio import StudioClient
+from soloman_limb import ComputerAgent
+from soloman_mcp import MCPManagerClient
+from soloman_editor import VideoLogger
 
 async def run_invoice_rpa(invoice_pdf_path: str):
     mcp = MCPManagerClient()
@@ -126,8 +126,8 @@ async def run_invoice_rpa(invoice_pdf_path: str):
     await limb.wait_for_visual_element("Transaction Recorded OK")
     raw_video = video.stop_recording()
 
-    # 5. Process audit video via octocut and upload to company storage MCP
-    audit_clip = await octocut.compress_and_watermark(raw_video, metadata=invoice_data)
+    # 5. Process audit video via soloman-editor and upload to company storage MCP
+    audit_clip = await soloman-editor.compress_and_watermark(raw_video, metadata=invoice_data)
     await mcp.execute("aws-s3", "uploadFile", {"bucket": "compliance-audit-logs", "file": audit_clip})
 ```
 
@@ -135,31 +135,31 @@ async def run_invoice_rpa(invoice_pdf_path: str):
 
 ## Recipe 4: AI Software Engineering & Interactive UI Showcase Engine
 
-**Objective:** Given a feature request prompt, generate complete React components in `OctopusStudio`, test responsiveness across 4 distinct viewport resolutions via `octolimb`, and compile a 60 FPS promotional video showing the component interactions with `octocut`.
+**Objective:** Given a feature request prompt, generate complete React components in `Soloman Studio`, test responsiveness across 4 distinct viewport resolutions via `Soloman Limb`, and compile a 60 FPS promotional video showing the component interactions with `Soloman Editor`.
 
 ### Execution Pipeline Matrix
 
 | Step | Responsible Tool | Input Artifact | Output Artifact |
 | :--- | :--- | :--- | :--- |
-| 1. Architecture & Coding | `OctopusStudio` | Feature spec prompt | React/TypeScript files |
-| 2. Tool Integration | `OctopusMCP-Manager` | API requirements | Mock server / Live API schemas |
-| 3. Visual Responsive QA | `octolimb` | Component preview URL | 4K Screen captures (Desktop, Tablet, Mobile) |
-| 4. Polish & Showcase Edit | `octocut` | Raw recordings + narration script | Final 60fps polished product video |
+| 1. Architecture & Coding | `Soloman Studio` | Feature spec prompt | React/TypeScript files |
+| 2. Tool Integration | `Soloman Manager` | API requirements | Mock server / Live API schemas |
+| 3. Visual Responsive QA | `Soloman Limb` | Component preview URL | 4K Screen captures (Desktop, Tablet, Mobile) |
+| 4. Polish & Showcase Edit | `Soloman Editor` | Raw recordings + narration script | Final 60fps polished product video |
 
 ---
 
 ## Recipe 5: Autonomous Security Auditor & Penetration Visualizer
 
-**Objective:** Audit web applications for security vulnerabilities (XSS, CSRF, broken access control), automatically construct proof-of-concept exploits using `octolimb`, and compile an executive video debriefing with `octocut` for security teams.
+**Objective:** Audit web applications for security vulnerabilities (XSS, CSRF, broken access control), automatically construct proof-of-concept exploits using `Soloman Limb`, and compile an executive video debriefing with `Soloman Editor` for security teams.
 
 ```bash
 # Running an ecosystem security audit
-octopus-cli run-audit \
+soloman-cli run-audit \
   --target "https://staging.internal-app.com" \
-  --orchestrator "OctopusStudio" \
-  --tools "OctopusMCP-Manager:security-pack" \
-  --actuator "octolimb:stealth-browser" \
-  --reporter "octocut:executive-summary"
+  --orchestrator "Soloman Studio" \
+  --tools "Soloman Manager:security-pack" \
+  --actuator "soloman-limb:stealth-browser" \
+  --reporter "soloman-editor:executive-summary"
 ```
 
 - **Output:** Comprehensive vulnerability report with reproduction timestamps and video evidence clips attached to each finding.

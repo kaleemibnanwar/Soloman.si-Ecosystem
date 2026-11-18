@@ -1,6 +1,6 @@
-# 🏛 Octopus AI Ecosystem Architecture Specification
+# 🏛 Soloman AI Ecosystem Architecture Specification
 
-This document details the architectural topology, communication protocols, state synchronization models, and execution DAGs interconnecting **OctopusStudio**, **octocut**, **octolimb**, and **OctopusMCP-Manager**.
+This document details the architectural topology, communication protocols, state synchronization models, and execution DAGs interconnecting **Soloman Studio**, **Soloman Editor**, **Soloman Limb**, and **Soloman Manager**.
 
 ---
 
@@ -10,8 +10,8 @@ The ecosystem is partitioned into four decoupled layers communicating over deter
 
 ```
 +-------------------------------------------------------------------------------+
-|                       ORCHESTRATION & REASONING LAYER                        |
-|                                OctopusStudio                                  |
+|                       ORCHESTRATION & REASONING LAYER                         |
+|                                Soloman Studio                                 |
 |   - Task Planner (DAG Scheduler)         - Sub-Agent Execution Pool           |
 |   - Real-Time Virtual DOM Sandbox        - State & Context Bus (TanStack)     |
 +-------------------------------------------------------------------------------+
@@ -20,7 +20,7 @@ The ecosystem is partitioned into four decoupled layers communicating over deter
        v                                v                             v
 +-----------------------------+ +-----------------------------+ +-----------------------------+
 |    TOOLING & DATA LAYER     | |    COMPUTER ACTUATION       | |      MEDIA & SYNTHESIS      |
-|     OctopusMCP-Manager      | |          octolimb           | |           octocut           |
+|     Soloman Manager      | |          Soloman Limb           | |           Soloman Editor           |
 |  - MCP Server Registry      | |  - OS Event Injector        | |  - FFmpeg & Wasm Pipeline   |
 |  - Security & Policy Filter | |  - Vision & OCR Parser      | |  - Kinetic Subtitle Sync    |
 |  - SSE / stdio / gRPC Bridge| |  - Native Mouse/Key Actuator| |  - Multi-Track Timeline Mix |
@@ -34,32 +34,32 @@ The ecosystem is partitioned into four decoupled layers communicating over deter
 
 | Link | Communication Protocol | Payload Format | Latency Target | Failure Strategy |
 | :--- | :--- | :--- | :--- | :--- |
-| **OctopusStudio ↔ OctopusMCP-Manager** | JSON-RPC 2.0 over `stdio` / SSE | MCP v1.0 Schema | < 15ms | Automatic reconnect & exponential backoff |
-| **OctopusStudio ↔ octolimb** | gRPC / Typed WebSocket | Protocol Buffers / JSON | < 25ms | Action replay with screen-diff validation |
-| **OctopusStudio ↔ octocut** | Distributed Job Queue (Redis/IPC) | Job Manifest JSON + Shared Volume | Async / Streamed | Checkpointed multi-pass render fallback |
-| **octolimb ↔ octocut** | Shared Frame Buffer / Ring Buffer | RAW NV12 / MP4 Chunks | Near Zero-Copy | Frame-drop resilience |
+| **Soloman Studio ↔ Soloman Manager** | JSON-RPC 2.0 over `stdio` / SSE | MCP v1.0 Schema | < 15ms | Automatic reconnect & exponential backoff |
+| **Soloman Studio ↔ Soloman Limb** | gRPC / Typed WebSocket | Protocol Buffers / JSON | < 25ms | Action replay with screen-diff validation |
+| **Soloman Studio ↔ Soloman Editor** | Distributed Job Queue (Redis/IPC) | Job Manifest JSON + Shared Volume | Async / Streamed | Checkpointed multi-pass render fallback |
+| **Soloman Limb ↔ Soloman Editor** | Shared Frame Buffer / Ring Buffer | RAW NV12 / MP4 Chunks | Near Zero-Copy | Frame-drop resilience |
 
 ---
 
 ## 3. The 4 Core Tool Responsibilities & Contract
 
-### 3.1 OctopusStudio (The Central Brain)
+### 3.1 Soloman Studio (The Central Brain)
 - **Role:** Decomposition of macro-level prompts into actionable DAGs.
 - **Agent Roles:**
   - `Architect`: Produces system designs, data contracts, and dependency graphs.
   - `Executor`: Generates code, modifies local files, and issues build instructions.
   - `Explorer`: Read-only code inspection, semantic symbol discovery, log aggregation.
-  - `Tester`: Dispatches test runs to `octolimb` and validates assertions.
-  - `Verifier`: Runs type-checks, linters, and validates visual regression artifacts from `octocut`.
+  - `Tester`: Dispatches test runs to `Soloman Limb` and validates assertions.
+  - `Verifier`: Runs type-checks, linters, and validates visual regression artifacts from `Soloman Editor`.
 
-### 3.2 OctopusMCP-Manager (The Tool Gateway)
+### 3.2 Soloman Manager (The Tool Gateway)
 - **Role:** Standardized Model Context Protocol hub.
 - **Dynamic Capabilities:**
   - Exposes tools from remote APIs (Stripe, GitHub, Jira, AWS) and local datastores (SQLite, PostgreSQL, Local FS).
   - Enforces least-privilege security policies, preventing unauthorized sub-agent actions.
   - Monitors tool health, token usage per tool call, and auto-spawns dead MCP servers.
 
-### 3.3 octolimb (The Actuation & Vision Layer)
+### 3.3 Soloman Limb (The Actuation & Vision Layer)
 - **Role:** Human-like interaction with desktop, terminal, and browser environments.
 - **Execution Pipeline:**
   1. **Capture:** High-framerate desktop/window snapshot.
@@ -67,7 +67,7 @@ The ecosystem is partitioned into four decoupled layers communicating over deter
   3. **Actuation:** Dispatches hardware-level mouse clicks, keystrokes, or scrolling.
   4. **Verification:** Inspects delta screen diff to confirm action succeeded before yielding back to Studio.
 
-### 3.4 octocut (The Multimodal Media Synthesizer)
+### 3.4 Soloman Editor (The Multimodal Media Synthesizer)
 - **Role:** Programmatic audio/video transformation and rendering.
 - **Capabilities:**
   - Automated silence stripping and audio-frequency threshold filtering.
@@ -83,10 +83,10 @@ The ecosystem is partitioned into four decoupled layers communicating over deter
 sequenceDiagram
     autonumber
     participant Client as User Prompt / Webhook
-    participant Studio as OctopusStudio
-    participant MCP as OctopusMCP-Manager
-    participant Limb as octolimb
-    participant Cut as octocut
+    participant Studio as Soloman Studio
+    participant MCP as Soloman Manager
+    participant Limb as Soloman Limb
+    participant Cut as Soloman Editor
 
     Client->>Studio: "Test new feature, generate demo clip, and deploy"
     
@@ -125,7 +125,7 @@ sequenceDiagram
 
 ## 5. Security & Isolation Model
 
-1. **Sandboxed Sub-Agent Scopes:** Sub-agents in `OctopusStudio` have strictly delineated file access and allowed tool lists.
-2. **MCP Boundary Defense:** `OctopusMCP-Manager` isolates external credentials in a local encrypted vault, exposing only tokenized action handlers to the LLMs.
-3. **Computer-Use Safeguards:** `octolimb` operates with configurable screen bounding boxes, kill-switch hotkeys, and prompt injection guards to avoid unauthorized desktop operations.
-4. **Clean Media Workspace:** `octocut` processes temporary assets in isolated disk partitions with automated garbage collection upon completion.
+1. **Sandboxed Sub-Agent Scopes:** Sub-agents in `Soloman Studio` have strictly delineated file access and allowed tool lists.
+2. **MCP Boundary Defense:** `Soloman Manager` isolates external credentials in a local encrypted vault, exposing only tokenized action handlers to the LLMs.
+3. **Computer-Use Safeguards:** `Soloman Limb` operates with configurable screen bounding boxes, kill-switch hotkeys, and prompt injection guards to avoid unauthorized desktop operations.
+4. **Clean Media Workspace:** `Soloman Editor` processes temporary assets in isolated disk partitions with automated garbage collection upon completion.

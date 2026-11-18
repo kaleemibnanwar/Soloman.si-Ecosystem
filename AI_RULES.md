@@ -1,11 +1,11 @@
 # AI Rules & Ecosystem Guidelines
 
-## 🐙 Octopus AI Ecosystem Overview
-This repository is part of the **Octopus AI Ecosystem** comprising four core components:
-1. **OctopusStudio (`kaleemibnanwar/OctopusStudio`):** Agentic IDE, task DAG orchestrator, and live workspace.
-2. **octocut (`kaleemibnanwar/octocut`):** Programmatic video, audio, timeline rendering, and multimodal synthesis engine.
-3. **octolimb (`kaleemibnanwar/octolimb`):** OS-level computer use, desktop/browser automation, and vision actuation.
-4. **OctopusMCP-Manager (`kaleemibnanwar/OctopusMCP-Manager`):** Model Context Protocol (MCP) tool gateway, registry, and sandbox.
+## ⚡ Soloman AI Ecosystem Overview
+This repository is part of the **Soloman AI Ecosystem** comprising four core components:
+1. **Soloman Studio (`kaleemibnanwar/Soloman-Studio`):** Agentic IDE, task DAG orchestrator, and live workspace.
+2. **Soloman Editor (`kaleemibnanwar/SolomanEditor`):** Programmatic video, audio, timeline rendering, and multimodal synthesis engine.
+3. **Soloman Limb (`kaleemibnanwar/solomanlimb`):** OS-level computer use, desktop/browser automation, and vision actuation.
+4. **Soloman Manager (`kaleemibnanwar/Soloman-Manager`):** Model Context Protocol (MCP) tool gateway, registry, and sandbox.
 
 ---
 

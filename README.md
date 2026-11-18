@@ -1,10 +1,10 @@
-# 🐙 Octopus AI Ecosystem
+# ⚡ Soloman AI Ecosystem
 
 <div align="center">
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Architecture: Multi-Agent](https://img.shields.io/badge/Architecture-Multi--Agent%20Ecosystem-blueviolet.svg)](#architecture)
-[![Protocol: Model Context Protocol (MCP)](https://img.shields.io/badge/Protocol-MCP%20Ready-blue.svg)](https://github.com/kaleemibnanwar/OctopusMCP-Manager)
+[![Protocol: Model Context Protocol (MCP)](https://img.shields.io/badge/Protocol-MCP%20Ready-blue.svg)](https://github.com/kaleemibnanwar/Soloman-Manager)
 [![Automation: Cross-Platform](https://img.shields.io/badge/Automation-OS%20%7C%20Media%20%7C%20IDE%20%7C%20MCP-emerald.svg)](#interconnection--automation-blueprints)
 [![Status: Production-Grade](https://img.shields.io/badge/Status-Active%20Development-success.svg)](#)
 
@@ -19,87 +19,87 @@
 ## 🌟 Ecosystem Vision
 
 Modern artificial intelligence requires moving beyond isolated chat interfaces. Real-world autonomy requires four complementary capabilities:
-1. **The Brain & Studio (`OctopusStudio`):** Visual workspace, code generation, reasoning engines, and hierarchical sub-agent DAG orchestration.
-2. **The Voice & Vision Media Engine (`octocut`):** High-throughput video, audio, transcription, and multimodal content processing.
-3. **The Physical & Digital Hands (`octolimb`):** OS-level computer use, GUI automation, native window control, mouse/keyboard actuation, and headless browser navigation.
-4. **The Central Nervous System & Tool Router (`OctopusMCP-Manager`):** Dynamic Model Context Protocol (MCP) server discovery, sandboxing, permission brokering, and tool routing.
+1. **The Brain & Studio (`Soloman Studio`):** Visual workspace, code generation, reasoning engines, and hierarchical sub-agent DAG orchestration.
+2. **The Voice & Vision Media Engine (`Soloman Editor`):** High-throughput video, audio, transcription, and multimodal content processing.
+3. **The Physical & Digital Hands (`Soloman Limb`):** OS-level computer use, GUI automation, native window control, mouse/keyboard actuation, and headless browser navigation.
+4. **The Central Nervous System & Tool Router (`Soloman Manager`):** Dynamic Model Context Protocol (MCP) server discovery, sandboxing, permission brokering, and tool routing.
 
-By interconnecting these four specialized systems, the **Octopus AI Ecosystem** enables end-to-end autonomous loops: from ideation and code generation to live software testing, programmatic multimedia production, and autonomous cross-platform enterprise automation.
+By interconnecting these four specialized systems, the **Soloman AI Ecosystem** enables end-to-end autonomous loops: from ideation and code generation to live software testing, programmatic multimedia production, and autonomous cross-platform enterprise automation.
 
 ---
 
 ## 🧩 Ecosystem Pillars
 
 ```
+                    ┌─────────────────────────────────────────┐
+                    │             Soloman Studio              │
+                    │  (Orchestrator • AI IDE • Agent DAG)    │
+                    └────────────────────┬────────────────────┘
+                                         │
+                 ┌───────────────────────┼───────────────────────┐
+                 ▼                       ▼                       ▼
+     ┌──────────────────────┐ ┌──────────────────────┐ ┌──────────────────────┐
+     │   Soloman Manager    │ │     Soloman Limb     │ │    Soloman Editor    │
+     │  (Tooling, APIs,     │ │  (Computer-Use, OS,  │ │ (Video, Audio, Clip  │
+     │   Cloud Connectors)  │ │   Desktop & Browser) │ │  Synthesis & Media)  │
+     └──────────────────────┘ └──────────────────────┘ └──────────────────────┘
+                 │                       │                       │
+                 └───────────────────────┼───────────────────────┘
+                                         ▼
                      ┌─────────────────────────────────────────┐
-                     │              OctopusStudio              │
-                     │  (Orchestrator • AI IDE • Agent DAG)    │
-                     └────────────────────┬────────────────────┘
-                                          │
-                  ┌───────────────────────┼───────────────────────┐
-                  ▼                       ▼                       ▼
-      ┌──────────────────────┐ ┌──────────────────────┐ ┌──────────────────────┐
-      │  OctopusMCP-Manager  │ │       octolimb       │ │       octocut        │
-      │   (Tooling, APIs,    │ │   (Computer-Use, OS, │ │ (Video, Audio, Clip  │
-      │    Cloud Connectors) │ │    Desktop & Browser)│ │  Synthesis & Media)  │
-      └──────────────────────┘ └──────────────────────┘ └──────────────────────┘
-                  │                       │                       │
-                  └───────────────────────┼───────────────────────┘
-                                          ▼
-                      ┌─────────────────────────────────────────┐
-                      │    Fully Autonomous Production Loop     │
-                      │ (DevOps • Media Agency • RPA • QA Bot)  │
-                      └─────────────────────────────────────────┘
+                     │    Fully Autonomous Production Loop     │
+                     │ (DevOps • Media Agency • RPA • QA Bot)  │
+                     └─────────────────────────────────────────┘
 ```
 
 | Component Repository | Primary Role | Key Superpowers | Core Technologies |
 | :--- | :--- | :--- | :--- |
-| **[OctopusStudio](https://github.com/kaleemibnanwar/OctopusStudio)** | Agentic IDE & Studio Hub | DAG-based task orchestration, live hot-reloading code sandbox, sub-agent lifecycle management, full-stack scaffolding | React, TypeScript, Vite, Tailwind CSS, TanStack Query |
-| **[octocut](https://github.com/kaleemibnanwar/octocut)** | Intelligent Media Processor | AI video cutting, automated reel creation, silence stripping, timeline rendering, subtitle synthesis, audio master | Node.js, FFmpeg, Whisper AI, Canvas/Wasm, WebAudio |
-| **[octolimb](https://github.com/kaleemibnanwar/octolimb)** | OS & GUI Computer-Use Agent | Native mouse/keyboard control, screen OCR & vision parsing, cross-platform OS scripting, headless browser automation | Python, Rust, NutJS/RobotJS, Playwright, Computer-Vision |
-| **[OctopusMCP-Manager](https://github.com/kaleemibnanwar/OctopusMCP-Manager)** | MCP Protocol & Tool Hub | Dynamic MCP server registry, sandboxed execution, permission gateway, stdio/SSE/gRPC routing, health monitoring | TypeScript, MCP SDK, Docker, JSON-RPC 2.0, Zod |
+| **[Soloman Studio](https://github.com/kaleemibnanwar/Soloman-Studio)** | Agentic IDE & Studio Hub | DAG-based task orchestration, live hot-reloading code sandbox, sub-agent lifecycle management, full-stack scaffolding | React, TypeScript, Vite, Tailwind CSS, TanStack Query |
+| **[Soloman Editor](https://github.com/kaleemibnanwar/SolomanEditor)** | Intelligent Media Processor | AI video cutting, automated reel creation, silence stripping, timeline rendering, subtitle synthesis, audio master | Node.js, FFmpeg, Whisper AI, Canvas/Wasm, WebAudio |
+| **[Soloman Limb](https://github.com/kaleemibnanwar/solomanlimb)** | OS & GUI Computer-Use Agent | Native mouse/keyboard control, screen OCR & vision parsing, cross-platform OS scripting, headless browser automation | Python, Rust, NutJS/RobotJS, Playwright, Computer-Vision |
+| **[Soloman Manager](https://github.com/kaleemibnanwar/Soloman-Manager)** | MCP Protocol & Tool Hub | Dynamic MCP server registry, sandboxed execution, permission gateway, stdio/SSE/gRPC routing, health monitoring | TypeScript, MCP SDK, Docker, JSON-RPC 2.0, Zod |
 
 ---
 
 ## 🔍 Deep Dive: The 4 Core Tools
 
-### 1. 🐙 [OctopusStudio](https://github.com/kaleemibnanwar/OctopusStudio)
+### 1. ⚡ [Soloman Studio](https://github.com/kaleemibnanwar/Soloman-Studio)
 **The Intelligent Agentic IDE & Orchestration Cockpit**
 
-OctopusStudio serves as the command center for the entire ecosystem. It provides a modern browser-based IDE and workflow builder with live previews, allowing human developers and autonomous AI agents to collaborate seamlessly.
+Soloman Studio serves as the command center for the entire ecosystem. It provides a modern browser-based IDE and workflow builder with live previews, allowing human developers and autonomous AI agents to collaborate seamlessly.
 
 - **Hierarchical Agent Graph (DAG):** Decomposes complex human intents into sub-tasks distributed across specialized agents (*Architect*, *Executor*, *Explorer*, *Verifier*, *Reviewer*).
 - **Interactive Live Workspace:** Hot-reloads code, renders full-stack web applications in an iframe sandbox, and performs type-checking and automated lint validation.
-- **Unified Extension Engine:** Native hooks for dispatching jobs to `octocut`, commanding `octolimb` for testing, and fetching tool schemas from `OctopusMCP-Manager`.
+- **Unified Extension Engine:** Native hooks for dispatching jobs to `Soloman Editor`, commanding `Soloman Limb` for testing, and fetching tool schemas from `Soloman Manager`.
 
 ```typescript
-// Sample DAG task definition in OctopusStudio
+// Sample DAG task definition in Soloman Studio
 await studio.dispatchTaskGraph({
   goal: "Build, verify, record, and publish marketing video for new Dashboard feature",
   subtasks: [
     { id: "code-gen", role: "executor", goal: "Implement analytics chart component" },
-    { id: "e2e-test", role: "tester", dependsOn: ["code-gen"], goal: "Trigger octolimb to run visual browser tests" },
-    { id: "media-gen", role: "executor", dependsOn: ["e2e-test"], goal: "Trigger octocut to generate 4K demo reel" },
-    { id: "publish", role: "executor", dependsOn: ["media-gen"], goal: "Use OctopusMCP-Manager GitHub & Twitter tools to release" }
+    { id: "e2e-test", role: "tester", dependsOn: ["code-gen"], goal: "Trigger Soloman Limb to run visual browser tests" },
+    { id: "media-gen", role: "executor", dependsOn: ["e2e-test"], goal: "Trigger Soloman Editor to generate 4K demo reel" },
+    { id: "publish", role: "executor", dependsOn: ["media-gen"], goal: "Use Soloman Manager GitHub & Twitter tools to release" }
   ]
 });
 ```
 
 ---
 
-### 2. 🎬 [octocut](https://github.com/kaleemibnanwar/octocut)
+### 2. 🎬 [Soloman Editor](https://github.com/kaleemibnanwar/SolomanEditor)
 **The Automated Multimodal Media & Video Processing Engine**
 
-`octocut` is designed for high-velocity programmatic media operations. It bridges generative AI assets, raw recordings, screen captures, and voiceovers into broadcast-ready videos, shorts, tutorials, and promotional clips.
+`Soloman Editor` is designed for high-velocity programmatic media operations. It bridges generative AI assets, raw recordings, screen captures, and voiceovers into broadcast-ready videos, shorts, tutorials, and promotional clips.
 
 - **Intelligent Scene Splicing:** Identifies key moments, speech pauses, audio peaks, and transitions using acoustic and vision embeddings.
 - **Automated Captioning & Motion Graphics:** Automatically transcribes speech, generates dynamic animated subtitles, applies lower-thirds, and overlays branding.
 - **Multitrack Timeline Assembly:** Programmatically manages audio ducking, sound effects, B-roll insertion, and multi-format exports (16:9 4K YouTube, 9:16 Shorts/TikTok/Reels).
 
 ```javascript
-import { OctoCutPipeline } from 'octocut';
+import { SolomanEditorPipeline } from 'soloman-editor';
 
-const pipeline = new OctoCutPipeline({ resolution: '1080p', fps: 60 });
+const pipeline = new SolomanEditorPipeline({ resolution: '1080p', fps: 60 });
 await pipeline
   .addScreenCapture('recording_artifacts/test_run.mp4')
   .stripSilences({ thresholdDb: -35, minDurationMs: 400 })
@@ -110,17 +110,17 @@ await pipeline
 
 ---
 
-### 3. 🦾 [octolimb](https://github.com/kaleemibnanwar/octolimb)
+### 3. 🦾 [Soloman Limb](https://github.com/kaleemibnanwar/solomanlimb)
 **The Autonomous OS-Level Computer-Use & Actuation Layer**
 
-Where APIs end, `octolimb` takes over. Giving the ecosystem "eyes and hands", `octolimb` allows AI agents to interact with any native desktop software, legacy enterprise GUI, terminal, or browser as a human would.
+Where APIs end, `Soloman Limb` takes over. Giving the ecosystem "eyes and hands", `Soloman Limb` allows AI agents to interact with any native desktop software, legacy enterprise GUI, terminal, or browser as a human would.
 
 - **Vision-Guided UI Navigation:** Real-time screen capture, element bounding box detection, OCR parsing, and visual diff analysis.
 - **Native OS Actuation:** Microsecond-precision mouse movements, multi-key combinations, drag-and-drop actions, clipboard management, and file system operations across Windows, macOS, and Linux.
 - **Headless & Headed Browser Automation:** Deep integration with Chromium/WebKit for interacting with web apps that lack public APIs.
 
 ```python
-from octolimb import ComputerAgent, ActionTarget
+from soloman_limb import ComputerAgent, ActionTarget
 
 agent = ComputerAgent(vision_model="claude-3-5-sonnet")
 # Autonomous OS interaction
@@ -132,10 +132,10 @@ agent.wait_for_file_download("/tmp/exports/bundle.zip")
 
 ---
 
-### 4. 🌐 [OctopusMCP-Manager](https://github.com/kaleemibnanwar/OctopusMCP-Manager)
+### 4. 🌐 [Soloman Manager](https://github.com/kaleemibnanwar/Soloman-Manager)
 **The Model Context Protocol Registry, Gateway & Sandbox**
 
-`OctopusMCP-Manager` is the universal connector. It implements the Anthropic Model Context Protocol (MCP) to supply every agent in the ecosystem with secure, dynamic, and versioned access to data sources, tools, APIs, and cloud services.
+`Soloman Manager` is the universal connector. It implements the Anthropic Model Context Protocol (MCP) to supply every agent in the ecosystem with secure, dynamic, and versioned access to data sources, tools, APIs, and cloud services.
 
 - **Dynamic Server Registry:** Hot-plug any standard MCP server (PostgreSQL, GitHub, Slack, AWS, FileSystem, Brave Search, Supabase, Jira, Docker).
 - **Policy & Security Sandbox:** Role-based permission controls, rate-limiting, credential vaulting, and fine-grained token budgeting.
@@ -153,8 +153,8 @@ agent.wait_for_file_download("/tmp/exports/bundle.zip")
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://localhost/prod_db"]
     },
-    "octolimb-bridge": {
-      "command": "octolimb-mcp-server",
+    "soloman-limb-bridge": {
+      "command": "soloman-limb-mcp-server",
       "args": ["--port", "8900"]
     }
   }
@@ -174,10 +174,10 @@ When these four tools collaborate, they form complex automated systems capable o
 sequenceDiagram
     autonumber
     actor User as Product Manager
-    participant Studio as OctopusStudio
-    participant MCP as OctopusMCP-Manager
-    participant Limb as octolimb
-    participant Cut as octocut
+    participant Studio as Soloman Studio
+    participant MCP as Soloman Manager
+    participant Limb as Soloman Limb
+    participant Cut as Soloman Editor
 
     User->>Studio: "Build analytics export & test checkout flow"
     Studio->>MCP: Query DB schema & API routes (Postgres MCP)
@@ -199,13 +199,13 @@ sequenceDiagram
 
 ```mermaid
 flowchart LR
-    A[OctopusMCP-Manager<br/>Monitors GitHub/RSS/DB] -->|Trigger New Event| B[OctopusStudio<br/>Orchestration Engine]
-    B -->|Generate Script & Prompts| C[OctopusStudio Sub-Agents]
-    C -->|Synthesize Voice & Assets| D[octocut Multimodal Engine]
-    C -->|Simulate App UI Actions| E[octolimb Computer-Use]
+    A[Soloman Manager<br/>Monitors GitHub/RSS/DB] -->|Trigger New Event| B[Soloman Studio<br/>Orchestration Engine]
+    B -->|Generate Script & Prompts| C[Soloman Studio Sub-Agents]
+    C -->|Synthesize Voice & Assets| D[Soloman Editor Multimodal Engine]
+    C -->|Simulate App UI Actions| E[Soloman Limb Computer-Use]
     E -->|High-FPS Capture| D
-    D -->|Export Final Reels/Shorts| F[octocut Output]
-    F -->|Upload via Web/API| G[octolimb Browser Uploader<br/>& MCP Social Connectors]
+    D -->|Export Final Reels/Shorts| F[Soloman Editor Output]
+    F -->|Upload via Web/API| G[Soloman Limb Browser Uploader<br/>& MCP Social Connectors]
     G -->|Publish| H[YouTube / TikTok / X / LinkedIn]
 ```
 
@@ -214,42 +214,42 @@ flowchart LR
 ### Blueprint C: Enterprise Legacy RPA & Desktop Intelligence Bridge
 *Goal: Bridge modern LLMs with legacy Windows/Desktop applications (SAP GUI, AS400 terminal, offline accounting software) without native APIs.*
 
-1. **OctopusMCP-Manager** receives incoming invoice PDFs from webhook or email connector.
-2. **OctopusStudio** parses structured line-items and constructs an execution sequence.
-3. **octolimb** launches the legacy ERP desktop application, navigates forms via vision coordinates, pastes invoice records, and verifies confirmation dialogs.
-4. **octocut** compiles an audit trail video recording of the robotic execution for compliance review.
-5. **OctopusMCP-Manager** posts confirmation back to PostgreSQL and updates accounting tables.
+1. **Soloman Manager** receives incoming invoice PDFs from webhook or email connector.
+2. **Soloman Studio** parses structured line-items and constructs an execution sequence.
+3. **Soloman Limb** launches the legacy ERP desktop application, navigates forms via vision coordinates, pastes invoice records, and verifies confirmation dialogs.
+4. **Soloman Editor** compiles an audit trail video recording of the robotic execution for compliance review.
+5. **Soloman Manager** posts confirmation back to PostgreSQL and updates accounting tables.
 
 ---
 
 ### Blueprint D: Self-Healing Code & Continuous Documentation Engine
 *Goal: Continuously monitor production error logs, reproduce bugs locally via computer use, draft patches, and update docs.*
 
-- **Trigger:** Sentry / CloudWatch MCP alerts `OctopusMCP-Manager`.
-- **Diagnosis:** `OctopusStudio` reads stack trace, scans codebase, and generates reproduction script.
-- **Reproduction:** `octolimb` executes reproduction steps in a live browser sandbox to confirm the bug.
-- **Resolution:** `OctopusStudio` applies surgical code patch and verifies hot reload.
-- **Verification:** `octolimb` re-runs the reproduction flow to verify resolution.
-- **Documentation:** `octocut` generates an interactive visual changelog video for engineering teams.
+- **Trigger:** Sentry / CloudWatch MCP alerts `Soloman Manager`.
+- **Diagnosis:** `Soloman Studio` reads stack trace, scans codebase, and generates reproduction script.
+- **Reproduction:** `Soloman Limb` executes reproduction steps in a live browser sandbox to confirm the bug.
+- **Resolution:** `Soloman Studio` applies surgical code patch and verifies hot reload.
+- **Verification:** `Soloman Limb` re-runs the reproduction flow to verify resolution.
+- **Documentation:** `Soloman Editor` generates an interactive visual changelog video for engineering teams.
 
 ---
 
 ## 🏗 System Architecture
 
 ```
-                                  OCTOPUS AI ECOSYSTEM
+                                  SOLOMAN AI ECOSYSTEM
  ┌──────────────────────────────────────────────────────────────────────────────────────┐
  │                                                                                      │
  │  ┌────────────────────────────────────────────────────────────────────────────────┐  │
- │  │                              OctopusStudio (IDE)                               │  │
+ │  │                              Soloman Studio (IDE)                              │  │
  │  │   ┌───────────────┐   ┌────────────────┐   ┌───────────────┐   ┌────────────┐  │  │
  │  │   │ Task DAG Plan │   │ Sub-Agent Pool │   │ Live Preview  │   │ State Store│  │  │
  │  │   └───────┬───────┘   └───────┬────────┘   └───────┬───────┘   └─────┬──────┘  │  │
  │  └───────────┼───────────────────┼────────────────────┼─────────────────┼─────────┘  │
- │              │                   │                    │                 │            │
+ │                  │       │                  │       │                      │
  │              ▼                   ▼                    ▼                 ▼            │
  │  ┌───────────────────────┐  ┌───────────────────────┐  ┌──────────────────────────┐  │
- │  │  OctopusMCP-Manager   │  │       octolimb        │  │         octocut          │  │
+ │  │   Soloman Manager     │  │     Soloman Limb      │  │      Soloman Editor      │  │
  │  │                       │  │                       │  │                          │  │
  │  │ • Server Registry     │  │ • Computer Use Engine │  │ • FFmpeg / WebCodecs     │  │
  │  │ • JSON-RPC / SSE Hub  │  │ • Mouse/Key Actuator  │  │ • Silence Stripper       │  │
@@ -271,11 +271,11 @@ flowchart LR
 
 ### 1. Clone Ecosystem Repositories
 ```bash
-# Clone the complete Octopus suite
-git clone https://github.com/kaleemibnanwar/OctopusStudio.git
-git clone https://github.com/kaleemibnanwar/octocut.git
-git clone https://github.com/kaleemibnanwar/octolimb.git
-git clone https://github.com/kaleemibnanwar/OctopusMCP-Manager.git
+# Clone the complete Soloman suite
+git clone https://github.com/kaleemibnanwar/Soloman-Studio.git
+git clone https://github.com/kaleemibnanwar/SolomanEditor.git
+git clone https://github.com/kaleemibnanwar/solomanlimb.git
+git clone https://github.com/kaleemibnanwar/Soloman-Manager.git
 ```
 
 ### 2. Workspace Unified Setup
@@ -283,25 +283,25 @@ git clone https://github.com/kaleemibnanwar/OctopusMCP-Manager.git
 # Setup pnpm monorepo workspace
 pnpm install
 
-# Start OctopusMCP-Manager Gateway
-cd OctopusMCP-Manager && pnpm start &
+# Start Soloman Manager Gateway
+cd Soloman-Manager && pnpm start &
 
-# Launch OctopusStudio Agentic IDE
-cd ../OctopusStudio && pnpm dev
+# Launch Soloman Studio Agentic IDE
+cd ../Soloman-Studio && pnpm dev
 ```
 
 ### 3. Register Tool Bridges
-Add the following configuration into your `octopus.config.json`:
+Add the following configuration into your `soloman.config.json`:
 
 ```json
 {
-  "$schema": "https://octopus.dev/schemas/config.v1.json",
-  "name": "Octopus-Automation-Cluster",
+  "$schema": "https://soloman.si/schemas/config.v1.json",
+  "name": "Soloman-Automation-Cluster",
   "nodes": {
     "studio": { "port": 5173, "agents": ["architect", "executor", "tester"] },
     "mcp": { "port": 3000, "registry": "./mcp-servers.json" },
-    "octolimb": { "rpc": "localhost:8900", "display": ":99", "visionModel": "claude-3-5-sonnet" },
-    "octocut": { "tempDir": "./.octopus/media", "hardwareAcceleration": "auto" }
+    "soloman-limb": { "rpc": "localhost:8900", "display": ":99", "visionModel": "claude-3-5-sonnet" },
+    "soloman-editor": { "tempDir": "./.soloman/media", "hardwareAcceleration": "auto" }
   }
 }
 ```
@@ -321,9 +321,9 @@ Explore in-depth architecture, integration patterns, and production blueprints:
 ## 🤝 Contributing
 
 We welcome contributions across all four repositories!
-1. Fork any of the target repositories (`OctopusStudio`, `octocut`, `octolimb`, `OctopusMCP-Manager`).
+1. Fork any of the target repositories (`Soloman Studio`, `Soloman Editor`, `Soloman Limb`, `Soloman Manager`).
 2. Create a feature branch: `git checkout -b feature/amazing-agent-capability`.
-3. Commit your changes: `git commit -m 'feat: add automated timeline trimming to octocut'`.
+3. Commit your changes: `git commit -m 'feat: add automated timeline trimming to Soloman Editor'`.
 4. Push to branch: `git push origin feature/amazing-agent-capability`.
 5. Open a Pull Request!
 
@@ -334,5 +334,5 @@ We welcome contributions across all four repositories!
 Distributed under the MIT License. See `LICENSE` for more information.
 
 <div align="center">
-Built with 🐙 by <a href="https://github.com/kaleemibnanwar">Kaleem Ibn Anwar</a> and the Octopus AI Community.
+Built with ⚡ by <a href="https://github.com/kaleemibnanwar">Kaleem Ibn Anwar</a> and the Soloman AI Community.
 </div>

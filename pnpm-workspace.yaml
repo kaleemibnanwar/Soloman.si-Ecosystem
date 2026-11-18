@@ -1,8 +1,8 @@
 allowBuilds:
-  # octopus-studio-default-allow-builds begin
-  # octopus-studio-default-allow-builds-schema=v1
-  # octopus-studio-default-allow-builds-data-version=2026-05-21.1
-  # octopus-studio-default-allow-builds-channel=local
+  # soloman-studio-default-allow-builds begin
+  # soloman-studio-default-allow-builds-schema=v1
+  # soloman-studio-default-allow-builds-data-version=2026-05-21.1
+  # soloman-studio-default-allow-builds-channel=local
   "@airbnb/node-memwatch": true
   "@anthropic-ai/claude-code": true
   "@apollo/protobufjs": true
@@ -371,7 +371,7 @@ allowBuilds:
   zeromq: true
   zlib-sync: true
   zopflipng-bin: true
-  # octopus-studio-default-allow-builds end
+  # soloman-studio-default-allow-builds end
 
 packages:
   - .

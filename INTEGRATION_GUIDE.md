@@ -1,17 +1,17 @@
-# 🔌 Octopus AI Ecosystem: Integration & Developer Guide
+# 🔌 Soloman AI Ecosystem: Integration & Developer Guide
 
-This guide describes how to programmatically integrate, extend, and write custom tools or connectors for **OctopusStudio**, **octocut**, **octolimb**, and **OctopusMCP-Manager**.
+This guide describes how to programmatically integrate, extend, and write custom tools or connectors for **Soloman Studio**, **Soloman Editor**, **Soloman Limb**, and **Soloman Manager**.
 
 ---
 
 ## 1. Ecosystem Protocol Specifications
 
 ### 1.1 Model Context Protocol (MCP) Schema
-All tool declarations in `OctopusMCP-Manager` conform to the open Model Context Protocol v1.0 standard:
+All tool declarations in `Soloman Manager` conform to the open Model Context Protocol v1.0 standard:
 
 ```json
 {
-  "name": "octolimb_execute_action",
+  "name": "soloman-limb_execute_action",
   "description": "Direct OS mouse, keyboard, or window actions on target machine",
   "inputSchema": {
     "type": "object",
@@ -40,30 +40,30 @@ All tool declarations in `OctopusMCP-Manager` conform to the open Model Context 
 Install the core ecosystem packages:
 
 ```bash
-pnpm add @octopus/studio-sdk @octopus/mcp-client @octopus/cut-engine @octopus/limb-client
+pnpm add @soloman/studio-sdk @soloman/mcp-client @soloman/cut-engine @soloman/limb-client
 ```
 
 ### 2.2 Initializing the Cluster Bridge
 
 ```typescript
-import { createOctopusCluster } from '@octopus/studio-sdk';
+import { createSolomanCluster } from '@soloman/studio-sdk';
 
-const cluster = await createOctopusCluster({
+const cluster = await createSolomanCluster({
   studio: {
-    endpoint: process.env.OCTOPUS_STUDIO_URL || 'http://localhost:5173',
-    apiKey: process.env.OCTOPUS_API_KEY
+    endpoint: process.env.SOLOMAN_STUDIO_URL || 'http://localhost:5173',
+    apiKey: process.env.SOLOMAN_API_KEY
   },
   mcpManager: {
     gatewayUrl: 'http://localhost:3000',
     allowedServers: ['github', 'postgres', 'docker', 'filesystem']
   },
-  octolimb: {
+  soloman-limb: {
     rpcHost: 'localhost:8900',
     display: ':0',
     enableVisionStream: true
   },
-  octocut: {
-    tempDirectory: '/tmp/octopus_media',
+  soloman-editor: {
+    tempDirectory: '/tmp/soloman_media',
     encoder: 'h264_nvenc' // Hardware accelerated encoding
   }
 });
@@ -75,9 +75,9 @@ console.log('Cluster status:', status);
 
 ---
 
-## 3. Creating a Custom MCP Tool for OctopusMCP-Manager
+## 3. Creating a Custom MCP Tool for Soloman Manager
 
-To expose a new service, database, or proprietary API to the entire Octopus ecosystem:
+To expose a new service, database, or proprietary API to the entire Soloman ecosystem:
 
 ```typescript
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
@@ -106,7 +106,7 @@ const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
 
-Register this server in `OctopusMCP-Manager`'s `mcpServers.json`:
+Register this server in `Soloman Manager`'s `mcpServers.json`:
 
 ```json
 {
@@ -121,26 +121,26 @@ Register this server in `OctopusMCP-Manager`'s `mcpServers.json`:
 
 ---
 
-## 4. Pipeline Hook Example: Bridging octolimb and octocut
+## 4. Pipeline Hook Example: Bridging Soloman Limb and Soloman Editor
 
-Stream live screen captures directly into the `octocut` video processing pipeline:
+Stream live screen captures directly into the `Soloman Editor` video processing pipeline:
 
 ```typescript
-import { LimbCaptureStream } from '@octopus/limb-client';
-import { OctoCutSession } from '@octopus/cut-engine';
+import { LimbCaptureStream } from '@soloman/limb-client';
+import { SolomanEditorSession } from '@soloman/cut-engine';
 
 async function recordAndProduceTutorial(url: string, outputPath: string) {
-  // 1. Initialize octocut session
-  const editor = new OctoCutSession({
+  // 1. Initialize soloman-editor session
+  const editor = new SolomanEditorSession({
     outputResolution: { width: 1920, height: 1080 },
     framerate: 60
   });
 
-  // 2. Start octolimb video capture stream
+  // 2. Start soloman-limb video capture stream
   const captureStream = new LimbCaptureStream({ fps: 60, includeAudio: true });
   await captureStream.start();
 
-  // 3. Execute actions with octolimb
+  // 3. Execute actions with soloman-limb
   await captureStream.agent.navigateTo(url);
   await captureStream.agent.clickWithVisualFeedback('#start-demo-btn');
   await captureStream.agent.typeSmoothly('#search-box', 'Autonomous Agents');
@@ -148,7 +148,7 @@ async function recordAndProduceTutorial(url: string, outputPath: string) {
 
   const rawVideoFile = await captureStream.stop();
 
-  // 4. Process with octocut: auto-zoom into clicks, add captions & music
+  // 4. Process with soloman-editor: auto-zoom into clicks, add captions & music
   await editor
     .loadRawFootage(rawVideoFile)
     .applySmartZoom({ focusOnClickEvents: true, scale: 1.25 })
@@ -171,11 +171,11 @@ cluster.events.on('agent:subtask:complete', (event) => {
   console.log(`Subtask ${event.subtaskId} completed by agent [${event.role}]`);
 });
 
-cluster.events.on('octolimb:action:executed', (event) => {
+cluster.events.on('soloman-limb:action:executed', (event) => {
   console.log(`OS Action ${event.actionType} at (${event.x}, ${event.y})`);
 });
 
-cluster.events.on('octocut:render:progress', (event) => {
+cluster.events.on('soloman-editor:render:progress', (event) => {
   console.log(`Rendering progress: ${event.percentComplete}%`);
 });
 ```
